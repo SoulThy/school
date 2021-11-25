@@ -1,0 +1,38 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Page Inserimento</title>
+    <script>
+        bool = true;        //bool 
+        function changeColor() {
+            if (bool == true){
+                document.body.style.background = 'white';
+                document.body.style.color = 'rgb(43, 43, 43)';
+                document.getElementById('js-button').style.background = 'rgb(43, 43, 43)';
+                bool = false;
+            }
+            else{
+                document.body.style.color = 'white';
+                document.body.style.background = 'rgb(43, 43, 43)';
+                document.getElementById('js-button').style.background = 'white';
+                bool = true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 class=title>Risolutore Equazione di Secondo Grado</h1>
+    <input type="button" onclick="changeColor();" id = "js-button">
+    <form action="risolviequazione.php" method="get" class="container">
+        <div class="inserimento">
+            <input type="text" name="A" maxlength="10" value="a">x^2 +
+            <input type="text" name="B" maxlength="10" value="b">x +
+            <input type="text" name="C" maxlength="10" value="c"> = 0
+        </div>
+        <div class="bottoni">
+            <input type="reset" value="Annulla">
+            <input type="submit" value="Risolvi">
+        </div>
+    </form>
+</body>
+</html>

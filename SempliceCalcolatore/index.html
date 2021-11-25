@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html style="background-color: #fda73d;">
+    <head>
+        <meta charset="utf-8">
+        <title>Prime prove</title>
+        <script>
+            function calcola(value) //value è il nome del bottone
+            {
+                n1 = document.getElementById('text-field1').value * 1;
+                n2 = document.getElementById('text-field2').value * 1;
+                if (isNaN(n1) || isNaN(n2))
+                {
+                    alert("Non hai inserito un numero");
+                }
+                else
+                {
+                    switch (value) {        //per ogni caso di bottone ("+","-","Potenza",ecc...)
+                        case '+':
+                            result = n1 + n2;
+                            break;
+                        case '-':
+                            result = n1 - n2;
+                            break;
+                        case '*':
+                            result = n1 * n2;
+                            break;
+                        case '/':
+                            result = n1 / n2;
+                            break;
+                        case 'Potenza':
+                            result = Math.pow(n1,n2);
+                            break;
+                        case 'Da Base 10 a base N':
+                        {
+                            result = "";
+                            while (n1 > 0)          //esce dal ciclo una volta che non si puo piu dividere il numero
+                            {
+                                resto = n1 % n2;        //ci calcoliamo il resto
+                                result = "" + resto + result; //inserisce il resto all'inizio, per risultare in una stringa capovolta.
+                                n1 = parseInt(n1/n2);   //cast a intero, per evitare casi di numeri con la virgola
+                            }
+                        }break;
+                        
+                        default:
+                            break;
+                    }
+                    document.getElementById('text-field3').value = result;
+                }
+            }
+        </script>
+    </head>
+    <body style="font-family: system-ui, sans-serif; font-size: 30px; text-align:center;">
+        <h1> Calcolatore GUI</h1>
+        <form>
+            <input type="text" id="text-field1" value="" style="font-size:50px"> <br><br>
+            <input type="text" id="text-field2" value="" style="font-size:50px"> <br><br>
+            <input type="button" value=" + " onclick="calcola(this.value);" style="font-size:40px;">
+            <input type="button" value=" - " onclick="calcola(this.value);" style="font-size:40px;">
+            <input type="button" value=" * " onclick="calcola(this.value);" style="font-size:40px;">
+            <input type="button" value=" / " onclick="calcola(this.value);" style="font-size:40px;">
+            <input type="button" value="Potenza" onclick="calcola(this.value);" style="font-size:40px;"><br><br>
+            <input type="button" value="Da Base 10 a base N" onclick="calcola(this.value);" style="font-size:40px;"><br><br>
+            <input type="text" id="text-field3" value="" style="font-size:50px" readonly> 
+        </form>
+    </body>
+</html>
