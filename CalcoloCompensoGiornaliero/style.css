@@ -1,0 +1,29 @@
+html{
+    font-family: system-ui, sans-serif;
+
+}
+body h1{
+    text-align: center;
+    font-size: 26px;
+}
+body p{
+    font-size: 20px;
+    margin: 5px;
+}
+body{
+    padding: 0;
+    width: 300px;
+    margin: 200px auto;
+    
+    font-size: 18px;
+
+    color: white;
+    background-color: rgb(43,43,43);
+}
+form{
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    text-align: center;
+}
