@@ -14,6 +14,10 @@
         if (!is_numeric($A) || !is_numeric($B) || !is_numeric($C))      
             die('<h1 style="color:red;">Inserisci tutte le informazioni necessarie!</h1>');
 
+        if ($A == 0)
+            die('<h1 style="color:red;">Equazione non di secondo grado!</h1>');
+
+        
         $delta = pow($B, 2) - (4 * $A * $C);
         if ($delta<0)
             echo "<h2>L'equazione non ha soluzioni reali</h2>";
